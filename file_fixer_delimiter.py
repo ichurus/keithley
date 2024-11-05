@@ -14,7 +14,7 @@ for filename in os.listdir(folder_path):
             df = pd.read_csv(file_path, sep=r'\s+', engine='python')
 
             # Save the file with comma as the delimiter
-            new_file_path = os.path.join(folder_path, f"{filename}")
+            new_file_path = os.path.join(folder_path, f"fixed_{filename}")
             df.to_csv(new_file_path, index=False)
 
             print(f"Converted '{filename}' to comma-delimited format.")
