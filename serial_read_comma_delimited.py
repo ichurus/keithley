@@ -58,7 +58,7 @@ class SerialInterface:
             return data
         return None
 
-    def scan(self, start_voltage=0, stop_voltage=600, steps=20, filename='scan_result_VA.csv'):
+    def scan(self, start_voltage=-0.0001, stop_voltage=0.0001, steps=10, filename='scan_result_VA.csv'):
         data = np.zeros([steps, 2])
         self.send_data(":SOUR:FUNC VOLT\r\n")
         self.send_data(":OUTP ON\r\n")
